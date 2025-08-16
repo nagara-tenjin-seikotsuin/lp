@@ -15,10 +15,7 @@ export interface Props {
 const { title, meta_title, description, image, noindex, canonical } =
   Astro.props;
 
-const socialImageURL = new URL(
-  `${image ? image : config.metadata.meta_image}`,
-  `${import.meta.env.PUBLIC_URL}`,
-);
+const socialImageURL = `${image ? image : config.metadata.meta_image}`;
 const isProd = import.meta.env.PROD;
 ---
 

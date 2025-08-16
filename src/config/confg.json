@@ -1,0 +1,14 @@
+{
+  "site": {
+    "title": "長良天神整骨院",
+    "description": "その“慢性的な痛み”もう我慢しなくていいんです。ただの整骨院じゃない。再発させない“本質ケア”がここにあります。",
+    "base_url": "https://lp.nagara-tenjin-seikotsuin.com",
+    "base_path": "/",
+    "favicon": "/favicon.ico"
+  },
+  "metadata": {
+    "meta_author": "長良天神整骨院",
+    "meta_description": "その“慢性的な痛み”もう我慢しなくていいんです。ただの整骨院じゃない。再発させない“本質ケア”がここにあります。",
+    "meta_image": "/ogp.png"
+  }
+}

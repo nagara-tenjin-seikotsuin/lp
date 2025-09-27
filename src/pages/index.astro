@@ -1,5 +1,6 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import { Picture } from "astro:assets";
 
 export const prerender = false;
 
@@ -8,6 +9,55 @@ const variant = locals.ab;
 ---
 
 <Layout>
-  <pre>{JSON.stringify(locals, null, 2)}</pre>
-  <p>ABテストのバリアント: {variant}</p>
+  <div class="max-w-[750px] mx-auto">
+    <section class="bg-[#DDE6E5]">
+      <Picture
+        src={import("@/assets/fv.svg")}
+        formats={["avif", "webp"]}
+        alt="fv"
+      />
+    </section>
+    <section>
+      <Picture
+        src={import("@/assets/solution.svg")}
+        formats={["avif", "webp"]}
+        alt="solution"
+      />
+    </section>
+    <section>
+      <Picture
+        src={import("@/assets/customer.svg")}
+        formats={["avif", "webp"]}
+        alt="customer"
+      />
+    </section>
+    <section>
+      <Picture
+        src={import("@/assets/evidence.svg")}
+        formats={["avif", "webp"]}
+        alt="evidence"
+      />
+    </section>
+    <section>
+      <Picture
+        src={import("@/assets/check.svg")}
+        formats={["avif", "webp"]}
+        alt="check"
+      />
+    </section>
+    <section>
+      <Picture
+        src={import("@/assets/faq.svg")}
+        formats={["avif", "webp"]}
+        alt="faq"
+      />
+    </section>
+    <section>
+      <Picture
+        src={import("@/assets/access.svg")}
+        formats={["avif", "webp"]}
+        alt="access"
+      />
+    </section>
+  </div>
 </Layout>

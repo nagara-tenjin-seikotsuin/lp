@@ -1,6 +1,8 @@
 ---
 import config from "@/config/confg.json";
 import { plainify } from "@/libs/textConverter";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
 import '@/styles/global.css';
 
 export interface Props {
@@ -106,10 +108,10 @@ const isProd = import.meta.env.PROD;
     <slot name="head" />
   </head>
   <body>
-    <!-- <SimpleHeader /> -->
+    <Header />
     <main>
       <slot />
     </main>
-    <!-- <SimpleFooter /> -->
+    <Footer />
   </body>
 </html>

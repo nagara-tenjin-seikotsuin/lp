@@ -1,0 +1,43 @@
+---
+type PlaceReview = {
+  author_name: string;             // 投稿者名
+  author_url?: string;             // 投稿者プロフィールURL
+  profile_photo_url?: string;      // 投稿者アイコン
+  rating: number;                  // 星 (1〜5)
+  relative_time_description: string; // 「2 週間前」などの相対表現
+  text: string;                    // 口コミ本文
+  time: number;                    // Unix timestamp (秒)
+  translated?: boolean;            // 翻訳済みかどうか（場合による）
+  language?: string;               // 言語コード
+  original_language?: string;      // 元の言語（翻訳時のみ）
+};
+
+const apiKey = process.env.GOOGLE_MAPS_API_KEY; // 推奨: process.env を使用
+if (!apiKey) {
+  throw new Error("GOOGLE_MAPS_API_KEY is not set");
+}
+
+const placeId = process.env.PLACE_ID; // 対象のPlace IDを環境変数などで設定
+if (!placeId) {
+  throw new Error("PLACE_ID is not set");
+}
+
+const url = new URL("https://maps.googleapis.com/maps/api/place/details/json");
+url.searchParams.set("place_id", placeId);
+url.searchParams.set("fields", "name,rating,user_ratings_total,reviews");
+url.searchParams.set("key", apiKey);
+
+const res = await fetch(url.toString());
+if (!res.ok) throw new Error(`Places API error: ${res.status}`);
+const data = await res.json();
+const reviews: PlaceReview[] = data?.result?.reviews ?? [];
+---
+
+<ul>
+  {reviews.map((review) => (
+    <li>
+      <p><strong>{review.author_name}</strong>（★{review.rating}）</p>
+      <p>{review.text}</p>
+    </li>
+  ))}
+</ul>

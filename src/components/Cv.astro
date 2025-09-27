@@ -1,0 +1,22 @@
+---
+import { Picture } from "astro:assets";
+
+export interface Props {
+  isShowHeader?: boolean;
+}
+
+const CV_LINK = 'https://airrsv.net/nagara-tenjin-seikotsuin/calendar';
+---
+
+{Astro.props.isShowHeader && <Picture
+  src={import("@/assets/cv-header.svg")}
+  formats={["avif", "webp"]}
+  alt="cv header"
+/>}
+<a href={CV_LINK} target="_blank" rel="noopener noreferrer">
+  <Picture
+    src={import("@/assets/cv-button.svg")}
+    formats={["avif", "webp"]}
+    alt="cv button"
+  />
+</a>

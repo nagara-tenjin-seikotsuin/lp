@@ -2,6 +2,7 @@
 import Layout from "@/layouts/Layout.astro";
 import { Picture } from "astro:assets";
 import Map from "@/components/Map.astro";
+import ElfsightReviews from "@/components/ElfsightReviews.astro";
 
 export const prerender = false;
 
@@ -31,6 +32,9 @@ const variant = locals.ab;
         formats={["avif", "webp"]}
         alt="customer"
       />
+      <div class="px-4 py-6">
+        <ElfsightReviews />
+      </div>
     </section>
     <section>
       <Picture

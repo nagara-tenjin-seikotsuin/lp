@@ -1,6 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import { Picture } from "astro:assets";
+import Map from "@/components/Map.astro";
 
 export const prerender = false;
 
@@ -58,6 +59,7 @@ const variant = locals.ab;
         formats={["avif", "webp"]}
         alt="access"
       />
+      <Map />
     </section>
   </div>
 </Layout>

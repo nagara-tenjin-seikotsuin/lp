@@ -1,4 +1,4 @@
-# Astro Starter Kit: Basics
+# 長良天神整骨院 - LP
 
 ```sh
 pnpm create astro@latest -- --template basics

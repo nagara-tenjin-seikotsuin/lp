@@ -6,7 +6,7 @@ import node from '@astrojs/node';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://nagara-tenjin-seikotsuin.github.io',
+  site: 'https://nagara-tenjin-seikotsuin.github.io/lp/',
   adapter: node({
     mode: 'standalone'
   }),

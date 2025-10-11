@@ -56,8 +56,15 @@ const variant = locals.ab;
         formats={["avif", "webp"]}
         alt="check"
       />
-      <div class="px-4 py-6">
-        <Cv />
+      <div class="bg-[#F1F1F1]">
+        <Picture
+          src={import("@/assets/cv-header.svg")}
+          formats={["avif", "webp"]}
+          alt="cv header"
+        />
+        <div class="px-4 pb-6">
+          <Cv />
+        </div>
       </div>
     </section>
     <section>

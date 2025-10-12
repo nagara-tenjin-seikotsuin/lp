@@ -2,6 +2,24 @@
 import { REVIEWS } from '@/constants/reviews'
 
 const RATING = 4.9
+
+// 日付から相対時間を計算する関数
+function getRelativeTime(dateString: string): string {
+  const now = new Date()
+  const publishDate = new Date(dateString)
+  const diffInMs = now.getTime() - publishDate.getTime()
+  const diffInDays = Math.floor(diffInMs / (1000 * 60 * 60 * 24))
+
+  if (diffInDays < 30) {
+    return `${diffInDays}日前`
+  } else if (diffInDays < 365) {
+    const months = Math.floor(diffInDays / 30)
+    return `${months}ヶ月前`
+  } else {
+    const years = Math.floor(diffInDays / 365)
+    return `${years}年前`
+  }
+}
 ---
 
 <!-- レビューヘッダー -->
@@ -117,7 +135,7 @@ const RATING = 4.9
               </div>
             </div>
             <!-- 日付 -->
-            <div class="text-sm text-gray-500">{review.relativePublishTimeDescription}</div>
+            <div class="text-sm text-gray-500">{getRelativeTime(review.publishTime)}</div>
           </div>
         </div>
 

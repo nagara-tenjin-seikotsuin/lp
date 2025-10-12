@@ -1,48 +1,90 @@
-# 長良天神整骨院 - LP
+# 長良天神整骨院 - ランディングページ
 
-```sh
-pnpm create astro@latest -- --template basics
+整骨院のランディングページです。Astro + Tailwind CSSで構築されています。
+
+## 🏥 プロジェクト概要
+
+長良天神整骨院のランディングページで、以下の機能を提供しています：
+
+- **レスポンシブデザイン**: モバイル・タブレット・デスクトップ対応
+- **Googleレビュー表示**: 実際のGoogleレビューを美しいカード形式で表示
+- **アコーディオン機能**: 長いレビューテキストの展開・折りたたみ
+- **SEO最適化**: メタタグとOGP画像の設定
+- **高速表示**: Astroの静的サイト生成による高速パフォーマンス
+
+## 🚀 技術スタック
+
+- **フレームワーク**: Astro
+- **スタイリング**: Tailwind CSS
+- **言語**: TypeScript
+- **パッケージマネージャー**: pnpm
+
+## 📁 プロジェクト構造
+
 ```
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
 /
 ├── public/
-│   └── favicon.svg
+│   ├── favicon.png
+│   ├── ogp.png
+│   └── CNAME
 ├── src/
+│   ├── components/
+│   │   ├── Cv.astro          # CTAボタンコンポーネント
+│   │   ├── ElfsightReviews.astro
+│   │   ├── Footer.astro      # フッター
+│   │   ├── Header.astro      # ヘッダー
+│   │   ├── Map.astro         # 地図コンポーネント
+│   │   ├── Reviews.astro     # レビュー表示
+│   │   └── Reviews.astro
+│   ├── constants/
+│   │   └── reviews.ts        # レビューデータ
 │   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   │   └── Layout.astro      # メインレイアウト
+│   ├── pages/
+│   │   └── index.astro       # メインページ
+│   ├── styles/
+│   │   └── global.css        # グローバルスタイル
+│   └── libs/
+│       └── textConverter.ts  # テキスト変換ユーティリティ
+├── astro.config.mjs
+├── package.json
+└── tsconfig.json
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## 🧞 コマンド
 
-## 🧞 Commands
+プロジェクトルートで以下のコマンドを実行してください：
 
-All commands are run from the root of the project, from a terminal:
+| コマンド | 説明 |
+| :------- | :--- |
+| `pnpm install` | 依存関係をインストール |
+| `pnpm dev` | 開発サーバーを起動（`localhost:4321`） |
+| `pnpm build` | 本番用サイトを`./dist/`にビルド |
+| `pnpm preview` | ビルドしたサイトをローカルでプレビュー |
+| `pnpm astro ...` | Astro CLIコマンドを実行 |
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+## 🎨 主な機能
 
-## 👀 Want to learn more?
+### レビュー表示システム
+- Googleレビューの美しいカード表示
+- アバター画像と認証バッジ
+- 星評価の視覚化
+- アコーディオン形式のテキスト展開
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+### レスポンシブデザイン
+- モバイルファーストアプローチ
+- タブレット・デスクトップ対応
+- 最適化された画像表示
+
+### パフォーマンス最適化
+- 画像の遅延読み込み
+- エラーハンドリング
+- 静的サイト生成
+
+## 🚀 デプロイ
+
+このプロジェクトはGitHub Pagesでデプロイされています。
+
+## 📝 ライセンス
+
+このプロジェクトは長良天神整骨院のLPサイトです。

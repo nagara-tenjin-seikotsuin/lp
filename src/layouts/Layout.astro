@@ -90,18 +90,21 @@ const isProd = import.meta.env.PROD;
     <meta name="twitter:card" content="summary_large_image" />
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-236LZ5X6HY"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-236LZ5X6HY'); </script>
+    {isProd && (
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-236LZ5X6HY"></script>
+      <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-236LZ5X6HY'); </script>
+    )}
 
     <!-- clarity -->
-    <!-- {isProd &&
+    {isProd &&
       <script type="text/javascript">
           (function(c,l,a,r,i,t,y){
               c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
               t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
               y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-          })(window, document, "clarity", "script", "r0swqi4mfl");
+          })(window, document, "clarity", "script", "tou2zelrre");
       </script>
-    } -->
+    }
 
     <slot name="head" />
   </head>

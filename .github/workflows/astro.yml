@@ -1,11 +1,8 @@
 name: Deploy to GitHub Pages
 
 on:
-  # `main`ブランチにプッシュするたびにワークフローを実行します。
-  # 異なるブランチ名を使用する場合は、`main`をブランチ名に置き換えてください。
-  push:
-    branches: [ main ]
-  # このワークフローをGitHubのActionsタブから手動で実行できるようにします。
+  # Cloudflare Pagesへ移行済みのため自動デプロイを無効化
+  # 手動でのみ実行可能（ロールバック用）
   workflow_dispatch:
 
 # このジョブがリポジトリをクローンし、ページデプロイメントを作成することを許可します。

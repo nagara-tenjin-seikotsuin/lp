@@ -18,7 +18,8 @@
   },
   "devDependencies": {
     "prettier": "^3.6.2",
-    "prettier-plugin-astro": "^0.14.1"
+    "prettier-plugin-astro": "^0.14.1",
+    "wrangler": "^4.92.0"
   },
   "packageManager": "pnpm@10.14.0"
 }
